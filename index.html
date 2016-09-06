@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--todo: create a angular app and bind it here-->
 <html lang="en" ng-app="zootopia">
 <head>
     <meta charset="UTF-8">
@@ -7,8 +8,9 @@
 
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/main.css">
-
 </head>
+
+<!--todo: create a controller and bind it here-->
 <body ng-controller="mainCtrl">
 
 <header class="main-header">
@@ -20,6 +22,7 @@
     </nav>
 </header>
 <aside class="add-animal-slide-out" ng-class="{'open':showMenu, 'close':!showMenu}">
+    <!--todo: create a method for adding an animal-->
     <form class="animal-form">
         <input type="text"  ng-model="name" placeholder="name">
         <input type="text"  ng-model="breed" placeholder="breed">
@@ -31,41 +34,58 @@
 <p class="or">- or select from the list -</p>
 
     <section class="animal-list-container">
-        <div class="animal-list-item"></div>
-        <div class="animal-list-item"></div>
-        <div class="animal-list-item"></div>
-        <div class="animal-list-item"></div>
-        <div class="animal-list-item"></div>
-        <div class="animal-list-item"></div>
-        <div class="animal-list-item"></div>
-        <div class="animal-list-item"></div>
-        <div class="animal-list-item"></div>
-        <div class="animal-list-item"></div>
-
+        <!--todo: repeat over the animals being retured from your service -->
+        <!--todo: add a background image of the animal -->
+        <!--todo: when the animal item is clicked add it to your zoo-->
+        <div class="animal-list-item">
+            <!--todo: add the animal name here-->
+            <h4>name</h4>
+        </div>
     </section>
 </aside>
 
 
 <main role="main">
     <section class="animal-cards-container">
+        <!--todo: repeat over the animals in your zoo-->
         <div class="animal-card">
             <div class="animal-content">
                 <div class="content-left">
+                    <!--todo: add animal name here-->
                     <h4>Flamingo</h4>
                 </div>
                 <img class="animal-img" src="https://hd.unsplash.com/photo-1459445364195-16475050193c" alt="">
             </div>
+            <!--todo: add animal age here-->
             <p class="animal-copy">Age: 45</p>
+            <!--todo: add animal breed here-->
             <p class="animal-copy">Breed: 45</p>
 
             <footer>
+                <!--todo: onclick feed your animal -->
                 <button class="feedme">Feed</button>
                 <ul class="footer-icons">
-                    <li class="edit"><img src="./images/edit.png" alt=""></li>
+                    <!--todo: onclick edit your animal -->
+                    <li class="edit" ng-click="showEdit = !showEdit"><img src="./images/edit.png" alt=""></li>
+                    <!--todo: onclick delete your animal -->
                     <li class="trash"><img src="./images/trash.png" alt=""></li>
                 </ul>
-
             </footer>
+
+            <form class="edit-form" ng-class="{'showEditForm':showEdit, 'hideEditForm': !showEdit}">
+                <h1 ng-click="showEdit = !showEdit">X</h1>
+                <!--todo: make this edit form work -->
+                <input type="text" ng-model="" placeholder="name">
+                <input type="text" ng-model="" placeholder="age">
+                <input type="text" ng-model="" placeholder="animal image url">
+                <input type="text" ng-model="" placeholder="breed">
+                <!-- todo: onclick update animal and close edit form on successful update -->
+                <!--todo: coders challnge implement error handeling -->
+                <button type="submit">Finish Edit</button>
+
+
+
+            </form>
         </div>
     </section>
 
