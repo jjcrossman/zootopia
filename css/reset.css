@@ -33,6 +33,7 @@ html {
     box-sizing: inherit;
 }
 body {
+    overflow: hidden;
     line-height: 1;
     font-family: sans-serif, "Helvetica", "Helvetica Neue";
 }
