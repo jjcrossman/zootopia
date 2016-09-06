@@ -1,0 +1,103 @@
+@import 'https://fonts.googleapis.com/css?family=Open+Sans|Roboto';
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Open Sans', sans-serif;
+}
+
+p,a,button,li {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+}
+
+.main-header {
+    width:100%;
+    height:75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:0 30px;
+    background: #fff;
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.12), 0px 2px 2px 0px rgba(0,0,0,0.24);
+}
+
+.add-animal {
+    width:45px;
+    cursor: pointer;
+}
+
+.add-animal img {
+    width:100%;
+}
+
+.animal-cards-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+.animal-card {
+    width: 250px;
+    height:250px;
+    position: relative;
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.12), 0px 2px 2px 0px rgba(0,0,0,0.24);
+    border-radius: 2px;
+}
+
+.animal-content {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.content-left {
+    text-align: center;
+    margin-left: 20px;
+    margin-top: 30px;
+}
+
+.animal-img {
+    width:125px;
+}
+
+.animal-copy {
+    text-align: center;
+    padding:20px 2px 0;
+    height:100px;
+
+
+
+}
+
+.animal-card footer {
+    width:100%;
+    height:50px;
+    background: #fff;
+    position: absolute;
+    bottom:0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.footer-icons {
+    display: flex;
+}
+
+.footer-icons li {
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.footer-icons li img {
+    width: 100%;
+}
+
+.feedme {
+    outline: none;
+    border: none;
+    width:85px;
+    color: #fff;
+    background: #2192F6;
+    cursor: pointer;
+}
