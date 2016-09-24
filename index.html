@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--todo: create a angular app and bind it here-->
-<html lang="en">
+<html lang="en" ng-app="ZootopiaApp">
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -11,7 +11,7 @@
 </head>
 
 <!--todo: create a controller and bind it here-->
-<body >
+<body ng-controller="mainCtrl">
 
 <header class="main-header">
     <h1>Zootopia</h1>
@@ -36,9 +36,9 @@
         <!--todo: repeat over the animals being returned from your service -->
         <!--todo: add a background image of the animal -->
         <!--todo: when the animal item is clicked add it to your zoo-->
-        <div class="animal-list-item">
+        <div class="animal-list-item" ng-repeat="animal in animals" ng-click="addAnimalToZoo( animal )">
             <!--todo: add the animal name here-->
-            <h4>name</h4>
+            <h4>{{animal.name}}</h4>
         </div>
     </section>
 </aside>
@@ -46,21 +46,21 @@
 <main role="main">
     <section class="animal-cards-container">
         <!--todo: repeat over the animals in your zoo-->
-        <div class="animal-card">
+        <div class="animal-card" ng-repeat="animal in zoo track by $index">
             <div class="animal-content">
                 <div class="content-left">
                     <!--todo: add animal name here-->
-                    <h4></h4>
+                    <h4>{{animal.name.charAt(0).toUpperCase() + animal.name.slice(1)}}</h4>
                 </div>
                 <!--todo: add animal image here-->
                 <img class="animal-img"  alt="">
             </div>
             <!--todo: add animal age here-->
-            <p class="animal-copy">Age:</p>
+            <p class="animal-copy">Age: {{animal.age}}</p>
             <!--todo: add animal breed here-->
-            <p class="animal-copy">Breed: </p>
+            <p class="animal-copy">Breed: {{animal.breed}}</p>
             <!--todo: add animal breed here-->
-            <p class="animal-copy"> Feed Count: </p>
+            <p class="animal-copy"> Feed Count:</p>
             <footer>
                 <!--todo: onclick feed your animal -->
                 <button class="feedme">Feed</button>
@@ -75,10 +75,10 @@
             <form class="edit-form" ng-class="{'showEditForm':showEdit, 'hideEditForm': !showEdit}">
                 <h1 ng-click="showEdit = !showEdit">X</h1>
                 <!--todo: make this edit form work -->
-                <input type="text" ng-model="" placeholder="name">
+                <!-- <input type="text" ng-model="" placeholder="name">
                 <input type="text" ng-model="" placeholder="age">
                 <input type="text" ng-model="" placeholder="animal image url">
-                <input type="text" ng-model="" placeholder="breed">
+                <input type="text" ng-model="" placeholder="breed"> -->
                 <!-- todo: onclick update animal and close edit form on successful update -->
                 <!--todo: coders challenge implement error handeling -->
                 <button type="submit">Finish Edit</button>
@@ -91,10 +91,12 @@
 <div class="body-overlay" ng-class="{'showOverlay':showMenu}"  ng-click="showMenu = !showMenu "></div>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.20/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
 
 <!--todo add your controller and service scripts here-->
-
+<script type="text/javascript" src="./js/app.js"></script>
+<script type="text/javascript" src="./js/maincontroller.js"></script>
+<script type="text/javascript" src="./js/mainservice.js"></script>
 
 
 </body>
